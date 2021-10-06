@@ -1,0 +1,23 @@
+@import './variables.scss';
+
+// Google font 300 / 300i / 400 / 500
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+// RESET
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+
+    &-l{
+    max-width: 1800px;
+    padding: 0 20px;
+    }
+}
