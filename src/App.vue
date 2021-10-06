@@ -1,17 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header @search="searchFilms"/>
+    <Films :films="filmslist"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+import Header from './components/Header.vue'
+import Films from './components/Films.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Films,
+  },
+  data(){
+    return{
+      filmslist:[]
+    }
+  },
+  methods:{
+    searchFilms(elm){
+      console.log(elm);
+
+      axios.get('https://api.themoviedb.org/3/search/movie/', {
+        params: {
+          api_key: '15c747bf94794250a1d04664229e8417',
+          query: elm,
+          language: 'it-IT'
+        }
+      }).then((resp) => {
+        console.log(resp.data);
+        this.filmslist = resp.data.results;
+      })
+
+    }
   }
 }
 </script>
