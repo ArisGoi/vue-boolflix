@@ -1,8 +1,15 @@
 <template>
   <div id="app">
     <Header @search="searchFilms"/>
-    <Films :films="filmslist"/>
-    <Series :series="serieslist"/>
+
+    <main>
+      <h2 class="section-title">Films</h2>
+      <Films :films="filmslist"/>
+
+      <h2 class="section-title">Series</h2>
+      <Series :series="serieslist"/>
+    </main>
+    
   </div>
 </template>
 

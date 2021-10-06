@@ -21,3 +21,17 @@ body{
     padding: 0 20px;
     }
 }
+
+main{
+    background-color: $c-bg-2;
+    height: calc(100vh - $header-height);
+    width: 100%;
+    overflow-y: auto;
+}
+
+.section-title{
+    color: $t-mid-bright;
+    margin-top: 30px;
+    margin-left: 28px;
+    margin-bottom: 8px;
+}

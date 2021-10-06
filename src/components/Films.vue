@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-        <h1>FILMS</h1>
-        <ul>
+        <ul class="holist">
             <li v-for="(film, index) in films" :key="index">
                 <Card :element="film"/>
             </li>
@@ -21,5 +20,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '../assets/variables.scss';
+@import '../assets/lists.scss';
 
 </style>
