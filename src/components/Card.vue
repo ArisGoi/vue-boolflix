@@ -5,8 +5,8 @@
 
         <div class="card-info">
 
-            <h3>{{element.title}}{{element.name}}</h3>
-            <h4>{{element.original_title}}{{element.original_name}}</h4>
+            <h3>{{element.title || element.name}}</h3>
+            <h4>{{element.original_title || element.original_name}}</h4>
             <p>
                 <span>Lingua:</span>
                 <img width="50px" :src="`https://unpkg.com/language-icons/icons/${element.original_language}.svg`" :alt="`${element.original_language}`">
@@ -18,6 +18,8 @@
                 <i class="fas fa-star" v-for="(starF, index) in getStars(element.vote_average)" :key="index"></i>
                 <i class="far fa-star" v-for="(starF, index) in 5 - getStars(element.vote_average)" :key="index"></i>
             </p>
+
+            <p class="overview">{{element.overview}}</p>
 
         </div>
     </div>
@@ -41,9 +43,10 @@ export default {
 
 .card-container{
     position: relative;
-    height: 300px;
+    height: 350px;
     color: white;
     margin-left: 20px;
+    overflow: hidden;
 
     &:hover .card-info{
         opacity: 1;
@@ -88,6 +91,11 @@ export default {
                 border-radius: 50%;
                 border: 1px solid white;
             }
+        }
+
+        .overview{
+            flex-grow: 1;
+            overflow: hidden;
         }
     }
 
