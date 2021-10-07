@@ -62,7 +62,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: rgba($color: #000000, $alpha: 0.5);
+        text-align: center;
+        background: rgba($color: #000000, $alpha: 0.8);
         padding: 0 20px;
 
         & > *{
@@ -95,7 +96,7 @@ export default {
 
         .overview{
             flex-grow: 1;
-            overflow: hidden;
+            font-size: .75rem;
         }
     }
 
