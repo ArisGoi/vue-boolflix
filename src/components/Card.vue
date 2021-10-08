@@ -1,7 +1,7 @@
 <template>
     <div class="card-container">
 
-        <img class="poster" :src="`https://image.tmdb.org/t/p/w500${element.poster_path}`" :alt="element.title || element.name">
+        <img class="poster" :src="`https://image.tmdb.org/t/p/w500${element.poster_path}`" :alt="element.title || element.name" @error="replaceSRC">
 
         <div class="card-info">
 
@@ -29,10 +29,15 @@
 export default {
     name: "Card",
     props:['element'],
+    components: {
+    },
     methods:{
         getStars(vote10){
             let vote5 = Math.floor(vote10 * 5 / 10);
             return vote5
+        },
+        replaceSRC(e){
+            e.target.src = 'https://mir-s3-cdn-cf.behance.net/project_modules/fs/9556d16312333.5691dd2255721.jpg'
         }
     }
 }
