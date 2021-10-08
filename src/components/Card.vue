@@ -1,7 +1,7 @@
 <template>
     <div class="card-container">
 
-        <img class="poster" :src="`https://image.tmdb.org/t/p/w500${element.poster_path}`" alt="">
+        <img class="poster" :src="`https://image.tmdb.org/t/p/w500${element.poster_path}`" :alt="element.title || element.name">
 
         <div class="card-info">
 
